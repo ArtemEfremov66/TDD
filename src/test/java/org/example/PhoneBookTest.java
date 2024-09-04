@@ -13,4 +13,11 @@ public class PhoneBookTest {
         Assertions.assertEquals(result, 1);
     }
 
+    @Test
+    public void findByNumberTest() {
+        int number = 2345;
+        String result = phoneBook.findByNumber(number);
+        Assertions.assertEquals(result, "Artem");
+    }
+
 }
