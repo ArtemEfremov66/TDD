@@ -16,7 +16,10 @@ public class PhoneBook {
     }
 
     public String findByNumber(int number) {
-        String name = book.get(number);
-        return name;
+        return book.get(number);
+    }
+
+    public int findByName(String name) {
+        return 0;
     }
 }
