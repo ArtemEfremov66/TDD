@@ -29,4 +29,12 @@ public class PhoneBookTest {
         Assertions.assertEquals(result, 666);
     }
 
+    @Test
+    public void printAllNamesTest() {
+        phoneBook.add("Clever", 266);
+        phoneBook.add("Bernard", 244);
+        phoneBook.add("Arti", 2344);
+        phoneBook.printAllNames();
+    }
+
 }

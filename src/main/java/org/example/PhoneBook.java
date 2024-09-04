@@ -29,4 +29,7 @@ public class PhoneBook {
     public int findByName(String name) {
         return book.get(name);
     }
+
+    public void printAllNames() {
+    }
 }
