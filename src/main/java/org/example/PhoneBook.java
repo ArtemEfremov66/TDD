@@ -2,24 +2,31 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class PhoneBook {
-    public Map<Integer, String> book = new HashMap<>();
+    public Map<String, Integer> book = new HashMap<>();
     public int count = 0;
 
-    public int add(Integer number, String name) {
-        if (!book.containsKey(number)) {
-            book.put(number, name);
+    public int add(String name, Integer number) {
+        if (!book.containsKey(name)) {
+            book.put(name,number);
             count++;
         }
         return count;
     }
 
     public String findByNumber(int number) {
-        return book.get(number);
+        Set<Map.Entry<String,Integer>> entrySet = book.entrySet();
+        for (Map.Entry<String,Integer> pair : entrySet) {
+            if (number == pair.getValue()) {
+                return pair.getKey();
+            }
+        }
+        return null;
     }
 
     public int findByName(String name) {
-        return 0;
+        return book.get(name);
     }
 }

@@ -9,13 +9,13 @@ public class PhoneBookTest {
     public void addTest() {
         String name = "Artem";
         Integer number = 2345;
-        int result = phoneBook.add(number, name);
+        int result = phoneBook.add(name, number);
         Assertions.assertEquals(result, 1);
     }
 
     @Test
     public void findByNumberTest() {
-        phoneBook.add(666, "Stiv");
+        phoneBook.add("Stiv", 666);
         int number = 666;
         String result = phoneBook.findByNumber(number);
         Assertions.assertEquals(result, "Stiv");
@@ -23,7 +23,7 @@ public class PhoneBookTest {
 
     @Test
     public void findByNameTest() {
-        phoneBook.add(666, "Stiv");
+        phoneBook.add("Stiv", 666);
         String name = "Stiv";
         int result = phoneBook.findByName(name);
         Assertions.assertEquals(result, 666);
