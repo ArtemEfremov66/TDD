@@ -4,18 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PhoneBook {
-    public Map<String, Integer> book = new HashMap<>();
+    public Map<Integer, String> book = new HashMap<>();
     public int count = 0;
 
-    public int add(String name, Integer number) {
-        if (!book.containsKey(name)) {
-            book.put(name, number);
+    public int add(Integer number, String name) {
+        if (!book.containsKey(number)) {
+            book.put(number, name);
             count++;
         }
         return count;
     }
 
     public String findByNumber(int number) {
-        return null;
+        String name = book.get(number);
+        return name;
     }
 }

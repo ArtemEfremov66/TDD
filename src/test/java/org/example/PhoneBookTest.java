@@ -9,15 +9,16 @@ public class PhoneBookTest {
     public void addTest() {
         String name = "Artem";
         Integer number = 2345;
-        int result = phoneBook.add(name, number);
+        int result = phoneBook.add(number, name);
         Assertions.assertEquals(result, 1);
     }
 
     @Test
     public void findByNumberTest() {
-        int number = 2345;
+        phoneBook.add(666, "Stiv");
+        int number = 666;
         String result = phoneBook.findByNumber(number);
-        Assertions.assertEquals(result, "Artem");
+        Assertions.assertEquals(result, "Stiv");
     }
 
 }
